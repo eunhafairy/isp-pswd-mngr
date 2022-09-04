@@ -32,6 +32,7 @@ function Register() {
                 <input placeholder='email'  value={email} onChange={handleInputEmail}/>
                 <input placeholder='password'  value={password} onChange={handleInputPassword}/>
                 {/* links */}
+                <button>Register</button>
                 <Link to="/sign-in"><button>back to login</button></Link>
             </div>
 

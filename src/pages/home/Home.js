@@ -11,7 +11,7 @@ class Home extends React.Component {
            
 
                 {/* links */}
-                <Link to="/sign-in">     <button>back to login</button></Link>
+                <Link to="/sign-in"> <button>back to login</button></Link>
             </div>
 
 
