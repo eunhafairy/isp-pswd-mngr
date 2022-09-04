@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-
+const userRoutes = require('./routes/users');
 
 mongoose.connect("mongodb+srv://nekko:siVlysx3r6WK4GNw@cluster0.uxoq8.mongodb.net/node-angular?retryWrites=true&w=majority")
 .then(() =>{
@@ -23,5 +23,6 @@ app.use((req, res, next) =>{
     
 });
 
-//app.use(cors());
+app.use("/api/users", userRoutes);
+
 module.exports = app;
