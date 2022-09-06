@@ -7,8 +7,6 @@ const checkAuth = require('../middleware/check-auth');
 // const multer = require('multer');
 
 
-
-
 router.post("/login", (req,res,next) => {
 
     let fetchedUser ;

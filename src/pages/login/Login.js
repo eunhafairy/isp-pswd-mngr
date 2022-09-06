@@ -1,10 +1,14 @@
-import axios from 'axios';
+
 import React from 'react';
 import { Link } from "react-router-dom";
+import UserService from "../../services/user.service"
 import { useState } from 'react';
+
 
 function Login() {
     // state = {  } 
+
+    const userService = new UserService()
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,16 +25,15 @@ function Login() {
 
     const login = (event) => {
         
+        event.preventDefault();
         let loginData = {
             email: email,
             password: password
         }
+        console.log()
 
-        axios.post("http://localhost:3001/api/users/login", loginData).then(response  => {
-
-         console.log(response)
-
-        })
+        userService.login(loginData)
+        
     }
 
 
@@ -43,7 +46,7 @@ function Login() {
             <form>
                 <input placeholder='enter username' value={email} onChange={handleInputEmail} />
                 <input placeholder='enter password' value={password} onChange={handleInputPassword}  />
-                <button onClick={login()}>sign in</button>
+                <button onClick={login}>sign in</button>
             </form>
             {/* links */}
             <Link to="/register">  <button>register</button></Link>
